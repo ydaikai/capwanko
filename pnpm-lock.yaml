@@ -61,8 +61,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       motion:
-        specifier: ^10.16.4
-        version: 10.16.4
+        specifier: ^10.18.0
+        version: 10.18.0
       pagefind:
         specifier: ^1.3.0
         version: 1.3.0
@@ -89,7 +89,7 @@ importers:
         version: 3.4.17
       tinacms:
         specifier: ^1.6.7
-        version: 1.6.7(@babel/core@7.23.6)(@babel/template@7.22.15)(@types/react@18.2.31)(abstract-level@1.0.4)(encoding@0.1.13)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(scheduler@0.20.2)(sucrase@3.35.0)(typescript@5.2.2)
+        version: 1.6.7(@babel/core@7.23.6)(@babel/template@7.22.15)(@types/react@18.2.31)(abstract-level@1.0.3)(encoding@0.1.13)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(scheduler@0.20.2)(sucrase@3.35.0)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1242,33 +1242,26 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@motionone/animation@10.16.3':
-    resolution: {integrity: sha512-QUGWpLbMFLhyqKlngjZhjtxM8IqiJQjLK0DF+XOF6od9nhSvlaeEpOY/UMCRVcZn/9Tr2rZO22EkuCIjYdI74g==}
+  '@motionone/animation@10.18.0':
+    resolution: {integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==}
 
   '@motionone/dom@10.12.0':
     resolution: {integrity: sha512-UdPTtLMAktHiqV0atOczNYyDd/d8Cf5fFsd1tua03PqTwwCe/6lwhLSQ8a7TbnQ5SN0gm44N1slBfj+ORIhrqw==}
 
-  '@motionone/dom@10.16.4':
-    resolution: {integrity: sha512-HPHlVo/030qpRj9R8fgY50KTN4Ko30moWRTA3L3imrsRBmob93cTYmodln49HYFbQm01lFF7X523OkKY0DX6UA==}
+  '@motionone/dom@10.18.0':
+    resolution: {integrity: sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==}
 
-  '@motionone/easing@10.16.3':
-    resolution: {integrity: sha512-HWTMZbTmZojzwEuKT/xCdvoMPXjYSyQvuVM6jmM0yoGU6BWzsmYMeB4bn38UFf618fJCNtP9XeC/zxtKWfbr0w==}
+  '@motionone/easing@10.18.0':
+    resolution: {integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==}
 
-  '@motionone/generators@10.16.4':
-    resolution: {integrity: sha512-geFZ3w0Rm0ZXXpctWsSf3REGywmLLujEjxPYpBR0j+ymYwof0xbV6S5kGqqsDKgyWKVWpUInqQYvQfL6fRbXeg==}
+  '@motionone/generators@10.18.0':
+    resolution: {integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==}
 
-  '@motionone/svelte@10.16.4':
-    resolution: {integrity: sha512-zRVqk20lD1xqe+yEDZhMYgftsuHc25+9JSo+r0a0OWUJFocjSV9D/+UGhX4xgJsuwB9acPzXLr20w40VnY2PQA==}
+  '@motionone/types@10.17.1':
+    resolution: {integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==}
 
-  '@motionone/types@10.16.3':
-    resolution: {integrity: sha512-W4jkEGFifDq73DlaZs3HUfamV2t1wM35zN/zX7Q79LfZ2sc6C0R1baUHZmqc/K5F3vSw3PavgQ6HyHLd/MXcWg==}
-
-  '@motionone/utils@10.16.3':
-    resolution: {integrity: sha512-WNWDksJIxQkaI9p9Z9z0+K27xdqISGNFy1SsWVGaiedTHq0iaT6iZujby8fT/ZnZxj1EOaxJtSfUPCFNU5CRoA==}
-
-  '@motionone/vue@10.16.4':
-    resolution: {integrity: sha512-z10PF9JV6SbjFq+/rYabM+8CVlMokgl8RFGvieSGNTmrkQanfHn+15XBrhG3BgUfvmTeSeyShfOHpG0i9zEdcg==}
-    deprecated: Motion One for Vue is deprecated. Use Oku Motion instead https://oku-ui.com/motion
+  '@motionone/utils@10.18.0':
+    resolution: {integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==}
 
   '@n1ru4l/push-pull-async-iterable-iterator@3.2.0':
     resolution: {integrity: sha512-3fkKj25kEjsfObL6IlKPAlHYPq/oYwUkkQ03zsTTiDjD7vg/RxjdiLeCydqtxHZP0JgsXL3D/X5oAkMGzuUp/Q==}
@@ -5059,8 +5052,8 @@ packages:
   monaco-editor@0.31.0:
     resolution: {integrity: sha512-H3QmysEwxxY8oxmFhIFcY9JkuwilUDa6txdAxb797cVr7XFZX27a3SDwcGJmTlV9iGPwdh132r3KKCS5aNL4Gg==}
 
-  motion@10.16.4:
-    resolution: {integrity: sha512-wvBeT0sZNgU6Od1aimjywBikqzm5yE97+L9eM/AoLy01AXNPdcnSDVHB3CoR0dGdHMbp/S0A/PjsJfWg0+k8Mg==}
+  motion@10.18.0:
+    resolution: {integrity: sha512-MVAZZmwM/cp77BrNe1TxTMldxRPjwBNHheU5aPToqT4rJdZxLiADk58H+a0al5jKLxkB0OdgNq6DiVn11cjvIQ==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -8016,19 +8009,19 @@ snapshots:
   '@graphql-tools/optimize@1.4.0(graphql@15.8.0)':
     dependencies:
       graphql: 15.8.0
-      tslib: 2.4.1
+      tslib: 2.8.1
 
   '@graphql-tools/optimize@2.0.0(graphql@15.8.0)':
     dependencies:
       graphql: 15.8.0
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   '@graphql-tools/relay-operation-optimizer@6.5.18(encoding@0.1.13)(graphql@15.8.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.0(encoding@0.1.13)(graphql@15.8.0)
       '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
       graphql: 15.8.0
-      tslib: 2.4.1
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -8036,9 +8029,9 @@ snapshots:
   '@graphql-tools/relay-operation-optimizer@7.0.0(encoding@0.1.13)(graphql@15.8.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.0(encoding@0.1.13)(graphql@15.8.0)
-      '@graphql-tools/utils': 10.0.7(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.2(graphql@15.8.0)
       graphql: 15.8.0
-      tslib: 2.5.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -8056,7 +8049,7 @@ snapshots:
       '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
       dset: 3.1.2
       graphql: 15.8.0
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   '@graphql-tools/utils@10.8.2(graphql@15.8.0)':
     dependencies:
@@ -8064,12 +8057,12 @@ snapshots:
       cross-inspect: 1.0.1
       dset: 3.1.4
       graphql: 15.8.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/utils@8.13.1(graphql@15.8.0)':
     dependencies:
       graphql: 15.8.0
-      tslib: 2.4.1
+      tslib: 2.8.1
 
   '@graphql-tools/utils@9.2.1(graphql@15.8.0)':
     dependencies:
@@ -8304,59 +8297,49 @@ snapshots:
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
 
-  '@motionone/animation@10.16.3':
+  '@motionone/animation@10.18.0':
     dependencies:
-      '@motionone/easing': 10.16.3
-      '@motionone/types': 10.16.3
-      '@motionone/utils': 10.16.3
-      tslib: 2.6.2
+      '@motionone/easing': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
+      tslib: 2.8.1
 
   '@motionone/dom@10.12.0':
     dependencies:
-      '@motionone/animation': 10.16.3
-      '@motionone/generators': 10.16.4
-      '@motionone/types': 10.16.3
-      '@motionone/utils': 10.16.3
+      '@motionone/animation': 10.18.0
+      '@motionone/generators': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
       hey-listen: 1.0.8
       tslib: 2.8.1
 
-  '@motionone/dom@10.16.4':
+  '@motionone/dom@10.18.0':
     dependencies:
-      '@motionone/animation': 10.16.3
-      '@motionone/generators': 10.16.4
-      '@motionone/types': 10.16.3
-      '@motionone/utils': 10.16.3
+      '@motionone/animation': 10.18.0
+      '@motionone/generators': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
       hey-listen: 1.0.8
-      tslib: 2.6.2
-
-  '@motionone/easing@10.16.3':
-    dependencies:
-      '@motionone/utils': 10.16.3
       tslib: 2.8.1
 
-  '@motionone/generators@10.16.4':
+  '@motionone/easing@10.18.0':
     dependencies:
-      '@motionone/types': 10.16.3
-      '@motionone/utils': 10.16.3
+      '@motionone/utils': 10.18.0
       tslib: 2.8.1
 
-  '@motionone/svelte@10.16.4':
+  '@motionone/generators@10.18.0':
     dependencies:
-      '@motionone/dom': 10.16.4
-      tslib: 2.6.2
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
+      tslib: 2.8.1
 
-  '@motionone/types@10.16.3': {}
+  '@motionone/types@10.17.1': {}
 
-  '@motionone/utils@10.16.3':
+  '@motionone/utils@10.18.0':
     dependencies:
-      '@motionone/types': 10.16.3
+      '@motionone/types': 10.17.1
       hey-listen: 1.0.8
-      tslib: 2.6.2
-
-  '@motionone/vue@10.16.4':
-    dependencies:
-      '@motionone/dom': 10.16.4
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@n1ru4l/push-pull-async-iterable-iterator@3.2.0': {}
 
@@ -9286,13 +9269,13 @@ snapshots:
       - supports-color
       - yup
 
-  '@tinacms/search@1.0.22(abstract-level@1.0.4)(encoding@0.1.13)(react@17.0.2)(sucrase@3.35.0)(typescript@5.2.2)(yup@0.32.11)':
+  '@tinacms/search@1.0.22(abstract-level@1.0.3)(encoding@0.1.13)(react@17.0.2)(sucrase@3.35.0)(typescript@5.2.2)(yup@0.32.11)':
     dependencies:
       '@tinacms/graphql': 1.4.37(react@17.0.2)(typescript@5.2.2)
       '@tinacms/schema-tools': 1.4.18(react@17.0.2)(yup@0.32.11)
       memory-level: 1.0.0
       node-fetch: 2.7.0(encoding@0.1.13)
-      search-index: 4.0.0(abstract-level@1.0.4)
+      search-index: 4.0.0(abstract-level@1.0.3)
       sqlite-level: 1.2.1(sucrase@3.35.0)
       stopword: 2.0.8
     transitivePeerDependencies:
@@ -12346,7 +12329,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   camelcase-css@2.0.1: {}
 
@@ -12363,7 +12346,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
       upper-case-first: 2.0.2
 
   catering@2.1.1: {}
@@ -12422,7 +12405,7 @@ snapshots:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   character-entities-html4@2.1.0: {}
 
@@ -12570,7 +12553,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
       upper-case: 2.0.2
 
   content-disposition@0.5.4:
@@ -12621,7 +12604,7 @@ snapshots:
 
   cross-inspect@1.0.1:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   cross-spawn@7.0.3:
     dependencies:
@@ -12763,7 +12746,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   dotenv@16.3.1: {}
 
@@ -13282,16 +13265,6 @@ snapshots:
     transitivePeerDependencies:
       - abstract-level
 
-  fergies-inverted-index@12.0.0(abstract-level@1.0.4):
-    dependencies:
-      browser-level: 1.0.1
-      charwise: 3.0.1
-      level-read-stream: 1.1.0(abstract-level@1.0.4)
-      memory-level: 1.0.0
-      traverse: 0.6.7
-    transitivePeerDependencies:
-      - abstract-level
-
   fetch-ponyfill@7.1.0(encoding@0.1.13):
     dependencies:
       node-fetch: 2.6.13(encoding@0.1.13)
@@ -13722,7 +13695,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   hey-listen@1.0.8: {}
 
@@ -13931,7 +13904,7 @@ snapshots:
 
   is-lower-case@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   is-map@2.0.2: {}
 
@@ -13996,7 +13969,7 @@ snapshots:
 
   is-upper-case@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   is-weakmap@2.0.1: {}
 
@@ -14164,23 +14137,11 @@ snapshots:
     optionalDependencies:
       abstract-level: 1.0.3
 
-  level-read-stream@1.1.0(abstract-level@1.0.4):
-    dependencies:
-      readable-stream: 3.6.2
-    optionalDependencies:
-      abstract-level: 1.0.4
-
   level-read-stream@1.1.1(abstract-level@1.0.3):
     dependencies:
       readable-stream: 3.6.2
     optionalDependencies:
       abstract-level: 1.0.3
-
-  level-read-stream@1.1.1(abstract-level@1.0.4):
-    dependencies:
-      readable-stream: 3.6.2
-    optionalDependencies:
-      abstract-level: 1.0.4
 
   level-supports@2.1.0: {}
 
@@ -14294,11 +14255,11 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   lru-cache@10.0.0: {}
 
@@ -15349,14 +15310,12 @@ snapshots:
 
   monaco-editor@0.31.0: {}
 
-  motion@10.16.4:
+  motion@10.18.0:
     dependencies:
-      '@motionone/animation': 10.16.3
-      '@motionone/dom': 10.16.4
-      '@motionone/svelte': 10.16.4
-      '@motionone/types': 10.16.3
-      '@motionone/utils': 10.16.3
-      '@motionone/vue': 10.16.4
+      '@motionone/animation': 10.18.0
+      '@motionone/dom': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
 
   mri@1.2.0: {}
 
@@ -15411,7 +15370,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   node-abi@3.74.0:
     dependencies:
@@ -15599,7 +15558,7 @@ snapshots:
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   parent-module@1.0.1:
     dependencies:
@@ -15663,14 +15622,14 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   path-browserify@1.0.1: {}
 
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   path-exists@4.0.0: {}
 
@@ -16518,20 +16477,6 @@ snapshots:
     transitivePeerDependencies:
       - abstract-level
 
-  search-index@4.0.0(abstract-level@1.0.4):
-    dependencies:
-      browser-level: 1.0.1
-      charwise: 3.0.1
-      fergies-inverted-index: 12.0.0(abstract-level@1.0.4)
-      level-read-stream: 1.1.1(abstract-level@1.0.4)
-      lru-cache: 10.0.0
-      memory-level: 1.0.0
-      ngraminator: 3.0.2
-      p-queue: 7.3.4
-      term-vector: 1.0.1
-    transitivePeerDependencies:
-      - abstract-level
-
   section-matter@1.0.0:
     dependencies:
       extend-shallow: 2.0.1
@@ -16566,7 +16511,7 @@ snapshots:
   sentence-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
       upper-case-first: 2.0.2
 
   serve-static@1.15.0:
@@ -16742,7 +16687,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   source-map-js@1.0.2: {}
 
@@ -16754,7 +16699,7 @@ snapshots:
 
   sponge-case@1.0.1:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   sprintf-js@1.0.3: {}
 
@@ -16916,7 +16861,7 @@ snapshots:
 
   swap-case@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   synckit@0.8.5:
     dependencies:
@@ -17056,7 +17001,7 @@ snapshots:
       - sucrase
       - supports-color
 
-  tinacms@1.6.7(@babel/core@7.23.6)(@babel/template@7.22.15)(@types/react@18.2.31)(abstract-level@1.0.4)(encoding@0.1.13)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(scheduler@0.20.2)(sucrase@3.35.0)(typescript@5.2.2):
+  tinacms@1.6.7(@babel/core@7.23.6)(@babel/template@7.22.15)(@types/react@18.2.31)(abstract-level@1.0.3)(encoding@0.1.13)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(scheduler@0.20.2)(sucrase@3.35.0)(typescript@5.2.2):
     dependencies:
       '@floating-ui/dom': 1.6.13
       '@floating-ui/react-dom': 2.0.2(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -17068,7 +17013,7 @@ snapshots:
       '@react-hook/window-size': 3.1.1(react@17.0.2)
       '@tinacms/mdx': 1.3.27(react@17.0.2)(typescript@5.2.2)(yup@0.32.11)
       '@tinacms/schema-tools': 1.4.18(react@17.0.2)(yup@0.32.11)
-      '@tinacms/search': 1.0.22(abstract-level@1.0.4)(encoding@0.1.13)(react@17.0.2)(sucrase@3.35.0)(typescript@5.2.2)(yup@0.32.11)
+      '@tinacms/search': 1.0.22(abstract-level@1.0.3)(encoding@0.1.13)(react@17.0.2)(sucrase@3.35.0)(typescript@5.2.2)(yup@0.32.11)
       '@tinacms/sharedctx': 1.0.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@udecode/plate-headless': 21.5.0(@babel/core@7.23.6)(@babel/template@7.22.15)(@types/react@18.2.31)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(scheduler@0.20.2)(slate-history@0.93.0(slate@0.94.1))(slate-hyperscript@0.77.0(slate@0.94.1))(slate-react@0.97.2(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(slate@0.94.1))(slate@0.94.1)
       color-string: 1.9.1
@@ -17136,7 +17081,7 @@ snapshots:
 
   title-case@3.0.3:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   titleize@3.0.0: {}
 
@@ -17416,11 +17361,11 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   upper-case@2.0.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.8.1
 
   uri-js@4.4.1:
     dependencies:
