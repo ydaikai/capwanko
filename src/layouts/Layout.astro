@@ -43,7 +43,7 @@ const categories = await getAllCategories()
 						<!-- SNSリンク -->
 						<div class='flex gap-4'>
 							<a
-								href='https://twitter.com/'
+								href='https://x.com/capitalwanko'
 								target='_blank'
 								rel='noopener noreferrer'
 								class='text-gray-600 hover:text-blue-400 transition-colors'
@@ -77,79 +77,8 @@ const categories = await getAllCategories()
 
 		<footer class='bg-white border-t border-gray-200 mt-12'>
 			<div class='container mx-auto px-4 py-6 text-center text-gray-600'>
-				&copy; {new Date().getFullYear()} My Blog. All rights reserved.
+				&copy; {new Date().getFullYear()} Capitalwanko. All rights reserved.
 			</div>
 		</footer>
-
-		<script>
-			// クライアントサイドでの検索用に記事データをキャッシュ
-			let cachedPosts = []
-
-			document.addEventListener('astro:page-load', () => {
-				initSearch()
-			})
-
-			function initSearch() {
-				const searchInput = document.querySelector('#search-input')
-				if (!searchInput) return
-
-				searchInput.addEventListener('input', async (e) => {
-					const query = e.target.value.toLowerCase()
-
-					// 初回検索時にデータをフェッチ
-					if (cachedPosts.length === 0) {
-						try {
-							const response = await fetch('/api/posts.json')
-							cachedPosts = await response.json()
-						} catch (error) {
-							console.error('Failed to fetch posts:', error)
-							return
-						}
-					}
-
-					// 検索実行
-					const results = cachedPosts.filter(
-						(post) =>
-							post.title.toLowerCase().includes(query) || post.content.toLowerCase().includes(query)
-					)
-
-					// 結果を表示
-					const searchResults = document.querySelector('#search-results')
-					if (!searchResults) return
-
-					if (query.length === 0) {
-						searchResults.innerHTML = ''
-						return
-					}
-
-					searchResults.innerHTML = results
-						.slice(0, 5)
-						.map(
-							(post) => `
-              <li>
-                <a href="/post/${post.id}" class="group flex gap-3 items-start p-2 hover:bg-gray-100 rounded">
-                  ${
-										post.eyecatch
-											? `
-                    <img src="${post.eyecatch.url}" alt="${post.title}" class="w-20 h-14 object-cover rounded" />
-                  `
-											: ''
-									}
-                  <div>
-                    <h3 class="text-sm font-medium group-hover:text-blue-500 line-clamp-2">
-                      ${post.title}
-                    </h3>
-                    <p class="text-xs text-gray-500 mt-1">
-                      ${new Date(post.publishedAt).toLocaleDateString('ja-JP')}
-                    </p>
-                  </div>
-                </a>
-              </li>
-            `
-						)
-						.join('')
-				})
-			}
-		</script>
 	</body>
 </html>
