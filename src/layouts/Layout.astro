@@ -2,6 +2,7 @@
 import { getAllCategories } from '../lib/api'
 import CategoryNav from '../components/CategoryNav.astro'
 import Sidebar from '../components/Sidebar.astro'
+import Search from '@/components/Search'
 import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
@@ -54,6 +55,10 @@ const categories = await getAllCategories()
 									></path>
 								</svg>
 							</a>
+						</div>
+						<!-- 検索ボタン -->
+						<div>
+							<Search />
 						</div>
 					</div>
 				</div>
