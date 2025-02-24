@@ -1,0 +1,150 @@
+---
+import { getAllCategories } from '../lib/api'
+import CategoryNav from '../components/CategoryNav.astro'
+import Sidebar from '../components/Sidebar.astro'
+import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+	title: string
+	currentPostId?: string
+	currentCategoryId?: string
+}
+
+const { title, currentPostId, currentCategoryId } = Astro.props
+const categories = await getAllCategories()
+---
+
+<!doctype html>
+<html lang='ja'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<title>{title}</title>
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<ViewTransitions />
+	</head>
+	<body class='min-h-screen bg-white text-gray-900'>
+		<header class='bg-white border-b border-gray-200 sticky top-0 z-10'>
+			<div class='container mx-auto px-4'>
+				<div class='flex justify-between items-start py-8'>
+					<div class='space-y-2'>
+						<a
+							href='/'
+							class='text-3xl font-bold hover:text-blue-600 transition-colors'
+							transition:name='site-title'
+						>
+							キャピタルワンコ
+						</a>
+						<p class='text-sm text-gray-600'>東大卒がお金やキャリアに関する情報を発信するブログ</p>
+					</div>
+
+					<div class='flex items-center gap-6'>
+						<!-- SNSリンク -->
+						<div class='flex gap-4'>
+							<a
+								href='https://twitter.com/'
+								target='_blank'
+								rel='noopener noreferrer'
+								class='text-gray-600 hover:text-blue-400 transition-colors'
+							>
+								<span class='sr-only'>X (Twitter)</span>
+								<svg class='w-5 h-5' viewBox='0 0 24 24' fill='currentColor'>
+									<path
+										d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
+									></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<CategoryNav categories={categories} currentCategoryId={currentCategoryId} />
+			</div>
+		</header>
+
+		<div class='container mx-auto px-4 py-8'>
+			<div class='grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8'>
+				<main>
+					<slot />
+				</main>
+				<Sidebar excludePostId={currentPostId} />
+			</div>
+		</div>
+
+		<footer class='bg-white border-t border-gray-200 mt-12'>
+			<div class='container mx-auto px-4 py-6 text-center text-gray-600'>
+				&copy; {new Date().getFullYear()} My Blog. All rights reserved.
+			</div>
+		</footer>
+
+		<script>
+			// クライアントサイドでの検索用に記事データをキャッシュ
+			let cachedPosts = []
+
+			document.addEventListener('astro:page-load', () => {
+				initSearch()
+			})
+
+			function initSearch() {
+				const searchInput = document.querySelector('#search-input')
+				if (!searchInput) return
+
+				searchInput.addEventListener('input', async (e) => {
+					const query = e.target.value.toLowerCase()
+
+					// 初回検索時にデータをフェッチ
+					if (cachedPosts.length === 0) {
+						try {
+							const response = await fetch('/api/posts.json')
+							cachedPosts = await response.json()
+						} catch (error) {
+							console.error('Failed to fetch posts:', error)
+							return
+						}
+					}
+
+					// 検索実行
+					const results = cachedPosts.filter(
+						(post) =>
+							post.title.toLowerCase().includes(query) || post.content.toLowerCase().includes(query)
+					)
+
+					// 結果を表示
+					const searchResults = document.querySelector('#search-results')
+					if (!searchResults) return
+
+					if (query.length === 0) {
+						searchResults.innerHTML = ''
+						return
+					}
+
+					searchResults.innerHTML = results
+						.slice(0, 5)
+						.map(
+							(post) => `
+              <li>
+                <a href="/post/${post.id}" class="group flex gap-3 items-start p-2 hover:bg-gray-100 rounded">
+                  ${
+										post.eyecatch
+											? `
+                    <img src="${post.eyecatch.url}" alt="${post.title}" class="w-20 h-14 object-cover rounded" />
+                  `
+											: ''
+									}
+                  <div>
+                    <h3 class="text-sm font-medium group-hover:text-blue-500 line-clamp-2">
+                      ${post.title}
+                    </h3>
+                    <p class="text-xs text-gray-500 mt-1">
+                      ${new Date(post.publishedAt).toLocaleDateString('ja-JP')}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            `
+						)
+						.join('')
+				})
+			}
+		</script>
+	</body>
+</html>

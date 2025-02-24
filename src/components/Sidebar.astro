@@ -1,0 +1,96 @@
+---
+import { getAllPosts } from '../lib/api'
+import type { Blog } from '../lib/microcms'
+
+const posts = await getAllPosts()
+const recentPosts = posts.slice(0, 5) // 最新5件を表示
+
+interface Props {
+	excludePostId?: string // 現在表示中の記事を除外するためのID
+}
+
+const { excludePostId } = Astro.props
+---
+
+<aside class='space-y-8'>
+	<!-- 検索ボックス -->
+	<div class='bg-white dark:bg-gray-800 rounded-lg shadow p-6'>
+		<h2 class='text-lg font-semibold mb-4'>記事を検索</h2>
+		<div class='space-y-4'>
+			<div class='relative'>
+				<input
+					type='text'
+					id='search-input'
+					placeholder='キーワードを入力...'
+					class='w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white'
+				/>
+				<button
+					type='submit'
+					class='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
+				>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						class='h-5 w-5'
+						viewBox='0 0 20 20'
+						fill='currentColor'
+					>
+						<path
+							fill-rule='evenodd'
+							d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
+							clip-rule='evenodd'></path>
+					</svg>
+				</button>
+			</div>
+			<ul id='search-results' class='space-y-2'></ul>
+		</div>
+	</div>
+
+	<!-- 広告スペース -->
+	<div class='bg-white dark:bg-gray-800 rounded-lg shadow p-6'>
+		<div
+			class='bg-gray-200 dark:bg-gray-700 h-60 flex items-center justify-center text-gray-500 dark:text-gray-400'
+		>
+			広告スペース
+		</div>
+	</div>
+
+	<!-- 最新の記事 -->
+	<div class='bg-white dark:bg-gray-800 rounded-lg shadow p-6' transition:name='recent-posts'>
+		<h2 class='text-lg font-semibold mb-4'>最新の記事</h2>
+		<ul class='space-y-4'>
+			{
+				recentPosts
+					.filter((post) => post.id !== excludePostId)
+					.map((post) => (
+						<li>
+							<a
+								href={`/post/${post.id}`}
+								class='group flex gap-3 items-start'
+								transition:name={`post-card-${post.id}`}
+							>
+								{post.eyecatch && (
+									<img
+										src={post.eyecatch.url}
+										alt={post.title}
+										class='w-20 h-14 object-cover rounded'
+										transition:name={`post-image-${post.id}`}
+									/>
+								)}
+								<div>
+									<h3
+										class='text-sm font-medium group-hover:text-blue-500 line-clamp-2'
+										transition:name={`post-title-${post.id}`}
+									>
+										{post.title}
+									</h3>
+									<p class='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+										{new Date(post.publishedAt).toLocaleDateString('ja-JP')}
+									</p>
+								</div>
+							</a>
+						</li>
+					))
+			}
+		</ul>
+	</div>
+</aside>

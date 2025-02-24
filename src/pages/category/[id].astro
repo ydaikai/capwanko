@@ -1,0 +1,62 @@
+---
+import { getAllCategories, getAllPosts } from '../../lib/api'
+import Layout from '../../layouts/Layout.astro'
+import PostCard from '../../components/PostCard.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import type { Category } from '../../lib/microcms'
+
+export async function getStaticPaths() {
+	const categories = await getAllCategories()
+	return categories.map((category) => ({
+		params: { id: category.id },
+		props: { category }
+	}))
+}
+
+interface Props {
+	category: Category
+}
+
+const { category } = Astro.props
+const posts = await getAllPosts()
+const categoryPosts = posts.filter((post) => post.category?.id === category.id)
+
+// ページネーションの設定
+const postsPerPage = 9
+const currentPage = Number(Astro.url.searchParams.get('page')) || 1
+const totalPages = Math.ceil(categoryPosts.length / postsPerPage)
+
+// 現在のページの記事を取得
+const start = (currentPage - 1) * postsPerPage
+const end = start + postsPerPage
+const currentPosts = categoryPosts.slice(start, end)
+---
+
+<Layout title={`${category.name} - Blog`} currentCategoryId={category.id}>
+	<main class='container mx-auto px-4 py-8'>
+		<Breadcrumb items={[{ name: 'ホーム', href: '/' }, { name: category.name }]} />
+		<div class='bg-white rounded-lg shadow p-6'>
+			<h1 class='text-4xl font-bold text-center mb-8'>{category.name}</h1>
+			<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+				{
+					currentPosts.map((post) => (
+						<PostCard
+							title={post.title}
+							publishedAt={post.publishedAt}
+							thumbnail={post.eyecatch?.url}
+							url={`/post/${post.id}`}
+							id={post.id}
+						/>
+					))
+				}
+				{
+					currentPosts.length === 0 && (
+						<p class='text-center text-gray-600 col-span-full py-12'>
+							このカテゴリーの記事はまだありません。
+						</p>
+					)
+				}
+			</div>
+		</div>
+	</main>
+</Layout>

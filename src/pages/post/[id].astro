@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import TagList from '../../components/TagList.astro'
+
+export async function getStaticPaths() {
+	const posts = await getAllPosts()
+	return posts.map((post) => ({
+		params: { id: post.id }
+	}))
+}
+
+const { id } = Astro.params
+const post = await getPostBySlug(id)
+const formattedDate = new Date(post.publishedAt).toLocaleDateString('ja-JP')
+const { title, category, content, publishedAt, tag } = post
+---
+
+<Layout title={post.title}>
+	<main class='container mx-auto px-4 py-8'>
+		<article class='max-w-4xl mx-auto'>
+			<Breadcrumb
+				items={[
+					{ name: 'ホーム', href: '/' },
+					category && { name: category.name, href: `/category/${category.id}` },
+					{ name: title }
+				].filter(Boolean)}
+			/>
+
+			<div class='bg-white rounded-lg shadow-lg p-6 md:p-8'>
+				<header class='mb-8'>
+					{
+						post.eyecatch?.url && (
+							<img src={post.eyecatch.url} alt={title} class='w-full h-auto mb-4 rounded-lg' />
+						)
+					}
+					<h1 class='text-4xl font-bold mb-4'>
+						{title}
+					</h1>
+
+					<div class='flex items-center gap-4 text-sm text-gray-600 mb-4'>
+						<time datetime={publishedAt}>
+							{formattedDate}
+						</time>
+						{
+							category && (
+								<a
+									href={`/category/${category.id}`}
+									class='text-blue-600 hover:text-blue-800 transition-colors'
+								>
+									{category.name}
+								</a>
+							)
+						}
+					</div>
+
+					<TagList tags={tag} />
+				</header>
+
+				<div class='prose prose-lg max-w-none' set:html={content} />
+			</div>
+		</article>
+	</main>
+</Layout>
