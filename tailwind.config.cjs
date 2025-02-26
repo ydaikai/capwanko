@@ -10,7 +10,7 @@ module.exports = {
         white: '#f8f9fa'
       },
       fontFamily: {
-        body: ['-apple-system', 'BlinkMacSystemFont', 'Noto Sans JP', 'sans-serif'],
+        body: ['-apple-system', 'BlinkMacSystemFont', 'NotoSansJP', 'sans-serif']
       },
       gridTemplateColumns: {
         list: 'repeat(auto-fill, minmax(400px, max-content))'
